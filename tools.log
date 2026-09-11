@@ -5,5 +5,5 @@ GNU Make 4.4.1
 arm-none-eabi-gcc.exe (Arm GNU Toolchain 15.3.Rel1 (Build arm-15.149)) 15.3.1 20260627
 code 1.136.0
 picotool v2.3.0 (Windows, GNU-16.1.0, Release)
-pico-sdk 2.3.1
+pico-sdk 2.3.0
 PICO_SDK_PATH=C:\pico\pico-sdk

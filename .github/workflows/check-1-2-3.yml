@@ -6,6 +6,6 @@ on:
 
 jobs:
   check:
-    uses: ant-lab-ru/es-test/.github/workflows/check-1-2-1.yml@master
+    uses: ant-lab-ru/es-test/.github/workflows/check-1-2-3.yml@master
     secrets:
       ES_ACCOUNT_SECRET: ${{ secrets.ES_ACCOUNT_SECRET }}

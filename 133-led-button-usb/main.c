@@ -50,8 +50,8 @@ int main()
     gpio_set_dir(BUTTON_PIN, GPIO_IN);
     gpio_pull_up(BUTTON_PIN);
 
-    bool led_state = 0;
     bool previos_led_state = 0;
+    bool led_state = 0;
 
     while (1)
     {

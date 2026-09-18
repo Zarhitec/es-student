@@ -4,8 +4,6 @@
 #include <stdio.h>
 
 // Имя устройства и версия прошивки
-#define DEVICE_NAME "Pico"
-#define FIRMWARE_VERSION "1.0.0"
 
 // Уровни логирования
 #define LOG_LEVEL_ERR 1

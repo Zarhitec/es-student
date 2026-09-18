@@ -5,6 +5,7 @@
 #include "hardware/regs/sio.h"
 #include "led.h"
 #include "log.h"
+#include "device.h"
 
 const uint BUTTON_PIN = 15;
 int DEBOUNCE_MS = 20;
@@ -31,6 +32,10 @@ void handle_command(int command)
     else if (command == 'v')
     {
         log_version();
+    }
+    else if (command == 'i')
+    {
+        device_info();
     }
     else
     {

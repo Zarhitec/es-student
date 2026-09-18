@@ -4,6 +4,7 @@
 #include "hardware/regs/addressmap.h"
 #include "hardware/regs/sio.h"
 #include "led.h"
+#include "log.h"
 
 const uint BUTTON_PIN = 15;
 int DEBOUNCE_MS = 20;
@@ -20,14 +21,20 @@ void handle_command(int command)
     if (command == 'e')
     {
         led_set(true);
+        LOG_INF("led on\n");
     }
     else if (command == 'd')
     {
         led_set(false);
+        LOG_INF("led off\n");
+    }
+    else if (command == 'v')
+    {
+        log_version();
     }
     else
     {
-        printf("unknown command: %c\n", command);
+        LOG_ERR("unknown command: %c\n", command);
     }
 
 }
@@ -48,7 +55,7 @@ int main()
         led_state = get_button_debounce(BUTTON_PIN);
         if(led_state == false && previos_led_state == true){
             led_toggle();
-            printf("led %s\n", led_is_on() ? "on" : "off");
+            LOG_INF("led %s\n", led_is_on() ? "on" : "off");
             previos_led_state = led_state;
         }
 
@@ -58,7 +65,7 @@ int main()
         {
             continue;
         }
-
+        LOG_DBG("got %c\n", command);
         handle_command(command);
         
     }
